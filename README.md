@@ -2,7 +2,7 @@
 
 Keyboard shield and 3d printed case to use with Arduino ProMicro-like contoller.
 
-![Photo of a chocofi keyboard](/images/IMG_7067.jpeg)
+![Photo of a chocofi keyboard](/pictures/IMG_7067.jpeg)
 
 - Split keyboard with 3 rows, 5 columns, and 3 thumbs per half
 - Increased pinky column stagger
@@ -13,11 +13,21 @@ Keyboard shield and 3d printed case to use with Arduino ProMicro-like contoller.
 
 ## Artifacts
 
-Gerbers are here: [pcb](/pcb/gerber.zip) and [top plate](/pcb/gerber-plate.zip)
+Hotswap PCB
+
+[IBOM](https://htmlpreview.github.io/?https://github.com/krikun98/chocofi/blob/main/pcb/hotswap/bom/ibom.html)
+
+[gerbers](../../releases/latest/download/pcb_hotswap_gerbers.zip)
+
+front|back
+--|--
+![front](../../releases/latest/download/pcb_hotswap.png)|![back](../../releases/latest/download/pcb_hotswap_back.png)
+
+[Plate gerbers](../../releases/latest/download/gerber_case_files.zip)
 
 Stls are here: [case folder](/case)
 
-For more photos check out the [images folder](/images)
+For more photos check out the [pictures folder](/pictures)
 
 ## By the way
 
@@ -28,8 +38,9 @@ Recommended batteries:
 
 Awesome libs used:
 
-- [kbd.pretty](https://github.com/foostan/kbd) by foostan
+- [kbd.pretty](https://github.com/krikun98/kbd) by foostan & krikun98
 - [keyswitches.pretty](https://github.com/daprice/keyswitches.pretty) by daprice
+- [Buttons_Switches.pretty](https://github.com/ElessarCuthalion/KiCAD_library/tree/master/Buttons_Switches.pretty) by ElessarCuthalion
 
 Also closest alternatives are:
 
