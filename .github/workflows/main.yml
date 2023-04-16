@@ -83,7 +83,7 @@ jobs:
     steps:
      - uses: actions/download-artifact@master
        with:
-         name: Skean_pcb_gerbers
+         name: Chocofi_pcb_gerbers
          path: gerbers/pcb
      - id: setmatrix
        run: |
