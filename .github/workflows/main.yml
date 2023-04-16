@@ -26,7 +26,7 @@ jobs:
     name: Generate
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.5.2
       - uses: xanantis/docker-file-ownership-fix@v1
       - name: Run build script
         run: |
@@ -34,17 +34,17 @@ jobs:
             ./build.sh
         shell: bash
       - name: Persist PCB gerbers
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: Chocofi_pcb_gerbers
           path: gerbers/pcb
       - name: Persist case gerbers
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: Chocofi_case_gerbers
           path: gerbers/case
       - name: Persist images
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: Chocofi_images
           path: images
@@ -111,7 +111,7 @@ jobs:
           path: gerbers/pcb
       - name: Gets latest created release info
         id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.2.2
+        uses: jossef/action-latest-release-info@v1.2.1
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload gerbers
@@ -137,7 +137,7 @@ jobs:
           path: images
       - name: Gets latest created release info
         id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.2.2
+        uses: jossef/action-latest-release-info@v1.2.1
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload images
@@ -161,7 +161,7 @@ jobs:
           path: gerbers/case
       - name: Gets latest created release info
         id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.2.2
+        uses: jossef/action-latest-release-info@v1.2.1
         env:
           GITHUB_TOKEN: ${{ github.token }}      
       - name: Upload case files
