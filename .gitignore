@@ -1,4 +1,26 @@
-.DS_Store
-chocofi-backups/
-chocofi-topplate-backups/
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*backups*
+*~
+_autosave-*
+*.tmp
+*-rescue.lib
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+*-bak
 
+# Autorouter
+*topor*
+
+# Build artifacts
+gerbers/*
+dxf/*
+images/*
+
+# Unnecessary files
+plate/*/*.kicad_prl
+bottom/*/*.kicad_prl
