@@ -72,7 +72,7 @@ jobs:
          cat ./tmp
          # End Generate JSON String
          matrixStringifiedObject=$(cat ./tmp) # Use this as jq @sh wasn't cooperating
-         echo "::set-output name=matrix::$matrixStringifiedObject"
+         echo "matrix=$matrixStringifiedObject" >> $GITHUB_OUTPUT
     
   gerber_matrix:
     runs-on: ubuntu-latest
@@ -96,7 +96,7 @@ jobs:
          cat ./tmp
          # End Generate JSON String
          matrixStringifiedObject=$(cat ./tmp) # Use this as jq @sh wasn't cooperating
-         echo "::set-output name=matrix::$matrixStringifiedObject"
+         echo "matrix=$matrixStringifiedObject" >> $GITHUB_OUTPUT
     
   upload_pcb_gerbers:
     runs-on: ubuntu-latest
@@ -111,11 +111,11 @@ jobs:
           path: gerbers/pcb
       - name: Gets latest created release info
         id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.1.0
+        uses: jossef/action-latest-release-info@v1.2.2
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload gerbers
-        uses: shogo82148/actions-upload-release-asset@v1
+        uses: shogo82148/actions-upload-release-asset@v1.6.4
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -137,11 +137,11 @@ jobs:
           path: images
       - name: Gets latest created release info
         id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.1.0
+        uses: jossef/action-latest-release-info@v1.2.2
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload images
-        uses: shogo82148/actions-upload-release-asset@v1                
+        uses: shogo82148/actions-upload-release-asset@v1.6.4
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -161,11 +161,11 @@ jobs:
           path: gerbers/case
       - name: Gets latest created release info
         id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.1.0
+        uses: jossef/action-latest-release-info@v1.2.2
         env:
           GITHUB_TOKEN: ${{ github.token }}      
       - name: Upload case files
-        uses: shogo82148/actions-upload-release-asset@v1
+        uses: shogo82148/actions-upload-release-asset@v1.6.4
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
